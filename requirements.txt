@@ -1,0 +1,5 @@
+requests
+python-dotenv
+openai  # only if you're using the OpenAI library
+beautifulsoup4  # if still using BS4 for scraping
+gradio
