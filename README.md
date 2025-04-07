@@ -4,12 +4,10 @@ This project allows you to enter a website URL, scrape the full HTML content, ex
 
 ## 🚀 Features
 
-- ✅ Scrape the full HTML content of any public website
-- ✅ Clean and extract only human-visible text (ignoring tags, buttons, scripts, etc.)
-- ✅ Use OpenAI to summarize the content into an informative brochure
+- ✅ Scrape the full HTML content of any public website  
+- ✅ Clean and extract only human-visible text (ignoring tags, buttons, scripts, etc.)  
+- ✅ Use OpenAI to summarize the content into an informative brochure  
 - ✅ Gradio interface for easy URL input and summary output
-
----
 
 ## 📦 Installation
 
@@ -18,59 +16,62 @@ This project allows you to enter a website URL, scrape the full HTML content, ex
 ```bash
 git clone https://github.com/your-username/website-summarizer.git
 cd website-summarizer
-Create and activate a virtual environment (optional but recommended):
+```
 
-bash
-Copiar
-Editar
+2. **Create and activate a virtual environment (optional but recommended)**:
+
+```bash
 python -m venv venv
+
 # On Windows:
 venv\Scripts\activate
+
 # On Mac/Linux:
 source venv/bin/activate
-Install the dependencies:
+```
 
-bash
-Copiar
-Editar
+3. **Install the dependencies**:
+
+```bash
 pip install -r requirements.txt
-If you don't have a requirements.txt, install manually:
+```
 
-bash
-Copiar
-Editar
+If you don't have a `requirements.txt`, install manually:
+
+```bash
 pip install gradio openai beautifulsoup4 requests
-⚙️ How It Works
-The WebScraper class downloads the full HTML content of a page.
+```
 
-The GPTAgent uses a prompt to extract only visible text from that HTML.
+## ⚙️ How It Works
 
-Another prompt summarizes the extracted content as if it were a company brochure.
+- The `WebScraper` class downloads the full HTML content of a page.  
+- The `GPTAgent` uses a prompt to extract only visible text from that HTML.  
+- Another prompt summarizes the extracted content as if it were a company brochure.  
+- Gradio displays the summarized result in a web interface.
 
-Gradio displays the summarized result in a web interface.
+## 🖥️ Run the App
 
-🖥️ Run the App
 Just launch the Gradio interface:
 
-bash
-Copiar
-Editar
+```bash
 python app.py
-Replace app.py with the filename where your Gradio code lives.
+```
 
-This will open a local web server in your browser at http://localhost:7860.
+Replace `app.py` with the filename where your Gradio code lives.
 
-🧠 Prompts Used
-HTML Extractor Prompt: Strips out all code and only keeps content visible to users.
+This will open a local web server in your browser at:  
+**http://localhost:7860**
 
-Page Summarizer Prompt: Summarizes a website like a short brochure, including culture, customers, and job info when available.
+## 🧠 Prompts Used
+
+- **HTML Extractor Prompt**: Strips out all code and only keeps content visible to users.  
+- **Page Summarizer Prompt**: Summarizes a website like a short brochure, including culture, customers, and job info when available.
 
 You can customize these prompts to adapt the tone and level of detail.
 
-📁 Project Structure
-pgsql
-Copiar
-Editar
+## 📁 Project Structure
+
+```
 .
 ├── app.py                        # Gradio interface
 ├── scrapper/
@@ -79,13 +80,19 @@ Editar
 │   ├── openai_client.py         # Wrapper for OpenAI API
 │   └── gpt_assistant.py         # GPTAgent logic using system prompts
 └── README.md                    # This file
-🔐 API Keys
-Make sure your OpenAIClient is configured with your OpenAI API key. This can be done via environment variable or configuration file.
+```
 
-📃 License
+## 🔐 API Keys
+
+Make sure your `OpenAIClient` is configured with your OpenAI API key.  
+This can be done via environment variable or configuration file.
+
+## 📃 License
+
 MIT License. Feel free to use, modify, and share.
 
-✨ Example
-![example gif or screenshot here if available]
+## ✨ Example
 
-Paste in a URL like https://viainfo.com.ar/ and get back a company-style summary in seconds!
+Paste in a URL like `https://viainfo.com.ar/` and get back a company-style summary in seconds!
+
+![example gif or screenshot here if available]
